@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Currency Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-4">
+<form id="converterForm" class="flex flex-wrap items-center gap-6 mb-4">
+    <div class="flex flex-col">
+        <label for="amount" class="font-semibold text-sm text-black mb-1">Amount</label>
+        <input id="amount" name="amount" type="text" class="border border-gray-300 px-2 py-1 w-36" value="1" />
+    </div>
+    <div class="flex flex-col">
+        <label for="fromCurrency" class="font-semibold text-sm text-black mb-1">From Currency</label>
+        <select id="fromCurrency" name="fromCurrency" class="border border-gray-300 px-2 py-1 w-36" >
+            <option value="VND">VietNam</option>
+            <option value="USD">USD</option>
+        </select>
+    </div>
+    <div class="flex flex-col">
+        <label for="toCurrency" class="font-semibold text-sm text-black mb-1">To Currency</label>
+        <select id="toCurrency" name="toCurrency" class="border border-gray-300 px-2 py-1 w-36" >
+            <option value="USD">USD</option>
+            <option value="VND">VietNam</option>
+        </select>
+    </div>
+    <button type="submit" class="bg-blue-400 text-white font-semibold px-4 py-2 rounded shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300">Convert</button>
+</form>
+<p id="result" class="text-blue-700 text-sm mb-6">
+    Result <span>:0.0 VND</span>
+</p>
+<script>
+    const exchangeRates = {
+        VND: { USD: 0.000043, EUR: 0.000039, JPY: 0.0059, VND: 1 },
+        USD: { VND: 23000, EUR: 0.9, JPY: 135, USD: 1 },
+        EUR: { VND: 25500, USD: 1.1, JPY: 150, EUR: 1 },
+        JPY: { VND: 170, USD: 0.0074, EUR: 0.0067, JPY: 1 }
+    };
+
+    function convertCurrency(amount, from, to) {
+        if (!exchangeRates[from] || !exchangeRates[from][to]) {
+            return null;
+        }
+        return amount * exchangeRates[from][to];
+    }
+
+    document.getElementById('converterForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const amount = parseFloat(document.getElementById('amount').value);
+        const fromCurrency = document.getElementById('fromCurrency').value;
+        const toCurrency = document.getElementById('toCurrency').value;
+
+        if (isNaN(amount) || amount < 0) {
+            alert('Please enter a valid positive number for Amount.');
+            return;
+        }
+
+        const converted = convertCurrency(amount, fromCurrency, toCurrency);
+        if (converted === null) {
+            alert('Conversion rate not available for selected currencies.');
+            return;
+        }
+
+        const resultEl = document.getElementById('result');
+        resultEl.innerHTML = `Result <span class="text-blue-700">: ${converted.toFixed(15)} ${toCurrency}</span>`;
+    });
+</script>
+</body>
+</html>

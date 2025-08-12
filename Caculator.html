@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculator</title>
+  <script>
+    function getValues() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      return { num1, num2 };
+    }
+
+    function addition() {
+      const { num1, num2 } = getValues();
+      const result = num1 + num2;
+      document.getElementById('result').textContent = 'Result Addition :' + result;
+    }
+
+    function subtraction() {
+      const { num1, num2 } = getValues();
+      const result = num1 - num2;
+      document.getElementById('result').textContent = 'Result Subtraction :' + result;
+    }
+
+    function multiplication() {
+      const { num1, num2 } = getValues();
+      const result = num1 * num2;
+      document.getElementById('result').textContent = 'Result Multiplication :' + result;
+    }
+
+    function division() {
+      const { num1, num2 } = getValues();
+      const result = num2 !== 0 ? num1 / num2 : 'Error (division by zero)';
+      document.getElementById('result').textContent = 'Result Division :' + result;
+    }
+  </script>
+</head>
+<body>
+<h1 class="text-4xl font-bold">Caculator</h1>
+<form onsubmit="return false" class="flex space-x-4 mt-4 max-w-md">
+  <input id="num1" type="text" value="12" class="border border-gray-300 p-2 flex-1" />
+  <input id="num2" type="text" value="12" class="border border-gray-300 p-2 flex-1" />
+</form>
+<div class="flex space-x-4 mt-6 max-w-md">
+  <button type="button" class="bg-gray-200 px-4 py-2" onclick="addition()">Addition(+)</button>
+  <button type="button" class="bg-gray-200 px-4 py-2" onclick="subtraction()">Subtraction(-)</button>
+  <button type="button" class="bg-gray-200 px-4 py-2" onclick="multiplication()">Multiplication(X)</button>
+  <button type="button" class="bg-gray-200 px-4 py-2" onclick="division()">Division(/)</button>
+</div>
+<p id="result" class="mt-8 text-2xl">Result Division :1</p>
+</body>
+</html>
