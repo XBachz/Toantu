@@ -1,0 +1,55 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tính chỉ số cân nặng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #111111;
+            font-family: serif;
+        }
+    </style>
+</head>
+<body class="p-6">
+<h1 class="text-3xl font-serif font-semibold text-[#f8f1e7] mb-4">Tính chỉ số cân nặng</h1>
+<form id="bmiForm">
+    <label class="block mb-2 text-[#f8f1e7] font-serif text-lg">
+        Nhập cân nặng: (kg)
+        <input id="weight" type="number" step="any" min="0" class="ml-2 bg-[#3a3a3a] text-[#f8f1e7] border border-gray-600 rounded px-2 py-1 w-40" />
+    </label>
+    <label class="block mb-4 text-[#f8f1e7] font-serif text-lg">
+        Nhập chiều cao: (m)
+        <input id="height" type="number" step="any" min="0" class="ml-2 bg-[#3a3a3a] text-[#f8f1e7] border border-gray-600 rounded px-2 py-1 w-40" />
+    </label>
+    <button type="submit" class="bg-gray-600 text-[#f8f1e7] font-serif text-sm px-3 py-1 rounded">Kiểm tra</button>
+</form>
+<p id="result" class="mt-4 text-[#f8f1e7] font-serif text-lg"></p>
+
+<script>
+    document.getElementById('bmiForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+        const resultEl = document.getElementById('result');
+
+        if (!weight || !height || weight <= 0 || height <= 0) {
+            resultEl.textContent = "Vui lòng nhập cân nặng và chiều cao hợp lệ.";
+            return;
+        }
+
+        const bmi = weight / (height * height);
+
+        if (bmi < 18.5) {
+            resultEl.textContent = "Underweight";
+        } else if (bmi < 25.0) {
+            resultEl.textContent = "Normal";
+        } else if (bmi < 30.0) {
+            resultEl.textContent = "Overweight";
+        } else {
+            resultEl.textContent = "Obese";
+        }
+    });
+</script>
+</body>
+</html>

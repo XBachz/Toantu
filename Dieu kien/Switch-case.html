@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kiểm tra số ngày trong tháng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #111111;
+        }
+    </style>
+</head>
+<body class="p-4">
+<h1 class="text-3xl font-serif text-white mb-2">Kiểm tra số ngày trong tháng</h1>
+<input id="monthInput" type="text" placeholder="Nhập tháng" class="bg-gray-700 text-gray-300 px-2 py-1 mr-1 border border-gray-600" />
+<button id="checkBtn" class="bg-gray-700 text-gray-300 px-3 py-1 border border-gray-600">Tinh số ngày</button>
+<p id="result" class="text-white mt-2">Đây là chỗ hiển thị kết quả</p>
+
+<script>
+    const monthInput = document.getElementById('monthInput');
+    const checkBtn = document.getElementById('checkBtn');
+    const result = document.getElementById('result');
+
+    checkBtn.addEventListener('click', () => {
+        const month = parseInt(monthInput.value.trim(), 10);
+        if (isNaN(month) || month < 1 || month > 12) {
+            result.textContent = 'Vui lòng nhập số tháng hợp lệ từ 1 đến 12';
+            return;
+        }
+
+        let days;
+        switch (month) {
+            case 2:
+                days = 28;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                days = 30;
+                break;
+            default:
+                days = 31;
+        }
+
+        result.textContent = `Tháng ${month} có ${days} ngày.`;
+    });
+</script>
+</body>
+</html>

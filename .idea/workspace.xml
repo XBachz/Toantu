@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Caculator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/money.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/Bai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/Switch-case.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/bai1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/cannang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Toantu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Toantu.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Caculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Toantu/Caculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/money.html" beforeDir="false" afterPath="$PROJECT_DIR$/Toantu/money.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +29,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="31BLYqSskYyhqx2SrzcH2zyi205" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,11 +41,16 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.Caculator.html.executor": "Run",
+    "JavaScript Debug.Switch-case.html.executor": "Run",
+    "JavaScript Debug.bai1.html.executor": "Run",
+    "JavaScript Debug.cannang.html.executor": "Run",
     "JavaScript Debug.chuyển đổi tiền tệ.html.executor": "Run",
+    "JavaScript Debug.money.html.executor": "Run",
+    "JavaScript Debug.tesr.html.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -51,6 +60,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\WebstormProjects\Toantu\Toantu" />
+      <recent name="C:\Users\Asus\WebstormProjects\Toantu\Dieu kien" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -66,6 +81,9 @@
       <option name="presentableId" value="Default" />
       <updated>1754992570160</updated>
       <workItem from="1754992571310" duration="423000" />
+      <workItem from="1755324378413" duration="6752000" />
+      <workItem from="1755568900369" duration="67000" />
+      <workItem from="1755571313273" duration="696000" />
     </task>
     <servers />
   </component>

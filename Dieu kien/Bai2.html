@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bai 2</title>
+  <title>Document</title>
+</head>
+<body>
+<script>
+  let age = parseInt(prompt("Enter your age:"));
+  if(age < 0) {
+    document.write("Tuổi không hợp lệ. Vui lòng nhập lại.");
+  } else if(age < 15) {
+    document.write("Không đủ tuổi đi học lớp 10.");
+  } else if(age >= 15 && age < 17) {
+    document.write("Đủ tuổi đi học lớp 10 ");
+  } else {
+    document.write("Quá tuổi");
+  }
+</script>
+</body>
+</html>
