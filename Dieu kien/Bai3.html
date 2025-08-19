@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kiểm tra số nguyên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+<div class="bg-white p-4 rounded shadow w-full max-w-xs text-center">
+    <input id="n" type="number" placeholder="Nhập số nguyên" class="w-full mb-3 p-2 border rounded" />
+    <button id="b" class="w-full bg-blue-600 text-white py-2 rounded">Kiểm tra</button>
+    <p id="r" class="mt-3 text-gray-700"></p>
+</div>
+<script>
+    b.onclick = () => {
+        const v = parseInt(n.value);
+        if (isNaN(v)) {
+            r.textContent = 'Vui lòng nhập số hợp lệ.';
+        } else {
+            if (v > 0) {
+                r.textContent = `Số ${v} lớn hơn 0.`;
+            } else if (v < 0) {
+                r.textContent = `Số ${v} nhỏ hơn 0.`;
+            } else {
+                r.textContent = `Số ${v} bằng 0.`;
+            }
+        }
+    }
+</script>
+</body>
+</html>

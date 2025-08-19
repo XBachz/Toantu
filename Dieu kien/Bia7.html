@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tính cước điện thoại</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+<div class="bg-white p-4 rounded shadow max-w-xs w-full text-center">
+  <input id="minutes" type="number" min="0" placeholder="Nhập số phút gọi" class="w-full mb-3 p-2 border rounded" />
+  <button id="calc" class="w-full bg-blue-600 text-white py-2 rounded">Tính cước</button>
+  <p id="result" class="mt-3 text-gray-700"></p>
+</div>
+<script>
+  calc.onclick = () => {
+    const min = parseInt(minutes.value);
+    if (isNaN(min) || min < 0) {
+      result.textContent = 'Vui lòng nhập số phút hợp lệ (>= 0).';
+      return;
+    }
+    let cost = 0;
+    if (min <= 50) {
+      cost = min * 600;
+    } else {
+      cost = 50 * 600 + (min - 50) * 400;
+    }
+    result.textContent = `Cước điện thoại: ${cost.toLocaleString('vi-VN', {style:'currency', currency:'VND'})}`;
+  }
+</script>
+</body>
+</html>

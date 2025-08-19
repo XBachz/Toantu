@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tính hoa hồng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+<div class="bg-white p-4 rounded shadow max-w-xs w-full text-center">
+    <input id="sales" type="number" min="0" placeholder="Nhập doanh số bán hàng" class="w-full mb-3 p-2 border rounded" />
+    <button id="calc" class="w-full bg-blue-600 text-white py-2 rounded">Tính hoa hồng</button>
+    <p id="result" class="mt-3 text-gray-700"></p>
+</div>
+<script>
+    calc.onclick = () => {
+        const s = parseFloat(sales.value);
+        if (isNaN(s) || s < 0) {
+            result.textContent = 'Vui lòng nhập doanh số hợp lệ (>= 0).';
+            return;
+        }
+        let commission = 0;
+        if (s < 10000000) {
+            commission = s * 0.05;
+        } else if (s < 20000000) {
+            commission = s * 0.1;
+        } else {
+            commission = s * 0.15;
+        }
+        result.textContent = `Hoa hồng nhận được: ${commission.toLocaleString('vi-VN', {style:'currency', currency:'VND'})}`;
+    }
+</script>
+</body>
+</html>

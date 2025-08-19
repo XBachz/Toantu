@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dieu kien/Bai2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien/Switch-case.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien/bai1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien/cannang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Toantu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Toantu.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/Bai3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/Bai4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/Bai5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/Bai6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dieu kien/Bia7.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Caculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Toantu/Caculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money.html" beforeDir="false" afterPath="$PROJECT_DIR$/Toantu/money.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dieu kien/bai1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dieu kien/bai1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.Bai2.html.executor": "Run",
+    "JavaScript Debug.Bai3.html.executor": "Run",
+    "JavaScript Debug.Bai4.html.executor": "Run",
+    "JavaScript Debug.Bai5.html.executor": "Run",
+    "JavaScript Debug.Bai6.html.executor": "Run",
+    "JavaScript Debug.Bia7.html.executor": "Run",
     "JavaScript Debug.Caculator.html.executor": "Run",
     "JavaScript Debug.Switch-case.html.executor": "Run",
     "JavaScript Debug.bai1.html.executor": "Run",
@@ -83,7 +88,7 @@
       <workItem from="1754992571310" duration="423000" />
       <workItem from="1755324378413" duration="6752000" />
       <workItem from="1755568900369" duration="67000" />
-      <workItem from="1755571313273" duration="696000" />
+      <workItem from="1755571313273" duration="2036000" />
     </task>
     <servers />
   </component>

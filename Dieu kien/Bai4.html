@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tìm số lớn nhất</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+<div class="bg-white p-4 rounded shadow w-full max-w-xs text-center">
+  <input id="a" type="number" placeholder="Số thứ nhất" class="w-full mb-2 p-2 border rounded" />
+  <input id="b" type="number" placeholder="Số thứ hai" class="w-full mb-2 p-2 border rounded" />
+  <input id="c" type="number" placeholder="Số thứ ba" class="w-full mb-3 p-2 border rounded" />
+  <button id="btn" class="w-full bg-blue-600 text-white py-2 rounded">Tìm số lớn nhất</button>
+  <p id="res" class="mt-3 text-gray-700"></p>
+</div>
+<script>
+  btn.onclick = () => {
+    const x = parseInt(a.value), y = parseInt(b.value), z = parseInt(c.value);
+    if ([x,y,z].some(v => isNaN(v))) {
+      res.textContent = 'Vui lòng nhập đủ 3 số nguyên hợp lệ.';
+      return;
+    }
+    const max = Math.max(x, y, z);
+    res.textContent = `Số lớn nhất là ${max}.`;
+  }
+</script>
+</body>
+</html>
