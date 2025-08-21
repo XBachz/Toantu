@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Bai9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toantu/Bai1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toantu/Bai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toantu/Bai3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toantu/Bai4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,38 +35,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.Bai10.html.executor": "Run",
-    "JavaScript Debug.Bai11.html.executor": "Run",
-    "JavaScript Debug.Bai2.html.executor": "Run",
-    "JavaScript Debug.Bai3.html.executor": "Run",
-    "JavaScript Debug.Bai4.html.executor": "Run",
-    "JavaScript Debug.Bai5.html.executor": "Run",
-    "JavaScript Debug.Bai6.html.executor": "Run",
-    "JavaScript Debug.Bai7.html.executor": "Run",
-    "JavaScript Debug.Bia7.html.executor": "Run",
-    "JavaScript Debug.Caculator.html.executor": "Run",
-    "JavaScript Debug.Switch-case.html.executor": "Run",
-    "JavaScript Debug.bai1.html.executor": "Run",
-    "JavaScript Debug.cannang.html.executor": "Run",
-    "JavaScript Debug.chuyển đổi tiền tệ.html.executor": "Run",
-    "JavaScript Debug.money.html.executor": "Run",
-    "JavaScript Debug.tesr.html.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.Bai10.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Bai11.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Bai2.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Bai3.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Bai4.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Bai5.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Bai6.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Bai7.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Bia7.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Caculator.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Switch-case.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.bai1.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.cannang.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.chuyển đổi tiền tệ.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.money.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.tesr.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Asus\WebstormProjects\Toantu\Toantu" />
@@ -100,6 +94,7 @@
       <workItem from="1755573984116" duration="218000" />
       <workItem from="1755776744325" duration="139000" />
       <workItem from="1755777027337" duration="942000" />
+      <workItem from="1755778488917" duration="230000" />
     </task>
     <servers />
   </component>
