@@ -1,0 +1,61 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giải phương trình bậc 2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+<div class="bg-white p-6 rounded shadow max-w-sm w-full">
+  <h1 class="text-xl font-semibold mb-4 text-center">Giải phương trình bậc 2: ax² + bx + c = 0</h1>
+  <form id="form" class="space-y-4">
+    <input type="number" id="a" placeholder="Hệ số a" step="any" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input type="number" id="b" placeholder="Hệ số b" step="any" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input type="number" id="c" placeholder="Hệ số c" step="any" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Giải</button>
+  </form>
+  <p id="result" class="mt-4 text-center font-semibold min-h-[3rem]"></p>
+</div>
+<script>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const a = parseFloat(document.getElementById('a').value);
+    const b = parseFloat(document.getElementById('b').value);
+    const c = parseFloat(document.getElementById('c').value);
+    if (a === 0) {
+      if (b === 0) {
+        if (c === 0) {
+          result.textContent = 'Phương trình có vô số nghiệm.';
+          result.className = 'mt-4 text-center font-semibold text-green-600';
+        } else {
+          result.textContent = 'Phương trình vô nghiệm.';
+          result.className = 'mt-4 text-center font-semibold text-red-600';
+        }
+      } else {
+        const x = -c / b;
+        result.textContent = `Phương trình bậc 1 có nghiệm x = ${x.toLocaleString('vi-VN')}`;
+        result.className = 'mt-4 text-center font-semibold text-green-600';
+      }
+      return;
+    }
+    const delta = b * b - 4 * a * c;
+    if (delta < 0) {
+      result.textContent = 'Phương trình vô nghiệm thực.';
+      result.className = 'mt-4 text-center font-semibold text-red-600';
+    } else if (delta === 0) {
+      const x = -b / (2 * a);
+      result.textContent = `Phương trình có nghiệm kép x = ${x.toLocaleString('vi-VN')}`;
+      result.className = 'mt-4 text-center font-semibold text-green-600';
+    } else {
+      const sqrtDelta = Math.sqrt(delta);
+      const x1 = (-b + sqrtDelta) / (2 * a);
+      const x2 = (-b - sqrtDelta) / (2 * a);
+      result.textContent = `Phương trình có 2 nghiệm phân biệt:\nx₁ = ${x1.toLocaleString('vi-VN')}, x₂ = ${x2.toLocaleString('vi-VN')}`;
+      result.className = 'mt-4 text-center font-semibold text-green-600 whitespace-pre-line';
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tính giá điện</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+<div class="bg-white p-6 rounded shadow max-w-md w-full">
+  <h1 class="text-xl font-semibold mb-4 text-center">Tính giá điện</h1>
+  <form id="form" class="space-y-4">
+    <input type="number" id="kwh" placeholder="Nhập số điện tiêu thụ (kWh)" min="0" step="1" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Tính</button>
+  </form>
+  <p id="result" class="mt-4 text-center font-semibold min-h-[2rem]"></p>
+</div>
+<script>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+
+  // Giá điện theo bậc (VNĐ/kWh)
+  const rates = [
+    { limit: 50, price: 1678 },
+    { limit: 50, price: 1734 },
+    { limit: 100, price: 2014 },
+    { limit: 100, price: 2536 },
+    { limit: 100, price: 2834 },
+    { limit: Infinity, price: 2927 }
+  ];
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let kwh = parseInt(document.getElementById('kwh').value, 10);
+    if (isNaN(kwh) || kwh < 0) {
+      result.textContent = 'Vui lòng nhập số điện tiêu thụ hợp lệ.';
+      result.className = 'mt-4 text-center font-semibold text-red-600';
+      return;
+    }
+    let remaining = kwh;
+    let total = 0;
+    for (const {limit, price} of rates) {
+      const used = Math.min(remaining, limit);
+      total += used * price;
+      remaining -= used;
+      if (remaining <= 0) break;
+    }
+    result.textContent = `Tiền điện phải trả: ${total.toLocaleString('vi-VN')} VNĐ`;
+    result.className = 'mt-4 text-center font-semibold text-green-600';
+  });
+</script>
+</body>
+</html>

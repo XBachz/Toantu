@@ -1,0 +1,46 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tính lãi ngân hàng (lãi mẹ đẻ lãi con)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+<div class="bg-white p-6 rounded shadow max-w-md w-full">
+  <h1 class="text-xl font-semibold mb-4 text-center">Tính lãi ngân hàng (lãi mẹ đẻ lãi con)</h1>
+  <form id="form" class="space-y-4">
+    <input type="number" id="principal" placeholder="Số tiền ban đầu (VNĐ)" min="0" step="any" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input type="number" id="months" placeholder="Số tháng cho vay" min="1" step="1" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input type="number" id="rate" placeholder="Lãi suất hàng tháng (%)" min="0" step="any" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Tính</button>
+  </form>
+  <p id="result" class="mt-4 text-center font-semibold min-h-[3rem] whitespace-pre-line"></p>
+</div>
+<script>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const principal = parseFloat(document.getElementById('principal').value);
+    const months = parseInt(document.getElementById('months').value, 10);
+    const rate = parseFloat(document.getElementById('rate').value);
+
+    if (isNaN(principal) || principal <= 0 || isNaN(months) || months < 1 || isNaN(rate) || rate < 0) {
+      result.textContent = 'Vui lòng nhập số hợp lệ cho tất cả các trường.';
+      result.className = 'mt-4 text-center font-semibold text-red-600';
+      return;
+    }
+
+    // Công thức lãi kép: A = P * (1 + r)^n
+    // r là lãi suất tháng (phần thập phân), n là số tháng
+    const r = rate / 100;
+    const amount = principal * Math.pow(1 + r, months);
+    const interest = amount - principal;
+
+    result.textContent = `Số tiền gốc: ${principal.toLocaleString('vi-VN')} VNĐ\nSố tháng: ${months}\nLãi suất tháng: ${rate}%\nTổng số tiền sau ${months} tháng: ${amount.toLocaleString('vi-VN')} VNĐ\nTổng lãi nhận được: ${interest.toLocaleString('vi-VN')} VNĐ`;
+    result.className = 'mt-4 text-center font-semibold text-green-600 whitespace-pre-line';
+  });
+</script>
+</body>
+</html>

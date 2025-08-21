@@ -1,0 +1,75 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tính thuế thu nhập cá nhân</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+<div class="bg-white p-6 rounded shadow max-w-md w-full">
+  <h1 class="text-xl font-semibold mb-4 text-center">Tính thuế thu nhập cá nhân</h1>
+  <form id="form" class="space-y-4">
+    <input type="number" id="income" placeholder="Nhập tổng thu nhập (VNĐ)" min="0" step="1" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input type="number" id="dependents" placeholder="Số người phụ thuộc" min="0" step="1" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Tính thuế</button>
+  </form>
+  <p id="result" class="mt-4 text-center font-semibold min-h-[3rem] whitespace-pre-line"></p>
+</div>
+<script>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+
+  // Mức giảm trừ cá nhân và phụ thuộc (VNĐ)
+  const personalDeduction = 11000000;
+  const dependentDeduction = 4400000;
+
+  // Biểu thuế luỹ tiến từng phần (%)
+  const taxBrackets = [
+    { limit: 5000000, rate: 0.05 },
+    { limit: 10000000, rate: 0.10 },
+    { limit: 18000000, rate: 0.15 },
+    { limit: 32000000, rate: 0.20 },
+    { limit: 52000000, rate: 0.25 },
+    { limit: 80000000, rate: 0.30 },
+    { limit: Infinity, rate: 0.35 }
+  ];
+
+  function calculateTax(taxableIncome) {
+    let tax = 0;
+    let remaining = taxableIncome;
+    let prevLimit = 0;
+    for (const bracket of taxBrackets) {
+      if (remaining <= 0) break;
+      const taxableAtThisRate = Math.min(remaining, bracket.limit - prevLimit);
+      tax += taxableAtThisRate * bracket.rate;
+      remaining -= taxableAtThisRate;
+      prevLimit = bracket.limit;
+    }
+    return tax;
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const income = parseInt(document.getElementById('income').value, 10);
+    const dependents = parseInt(document.getElementById('dependents').value, 10);
+
+    if (isNaN(income) || income < 0 || isNaN(dependents) || dependents < 0) {
+      result.textContent = 'Vui lòng nhập số hợp lệ cho thu nhập và số người phụ thuộc.';
+      result.className = 'mt-4 text-center font-semibold text-red-600';
+      return;
+    }
+
+    const taxableIncome = income - personalDeduction - dependents * dependentDeduction;
+    if (taxableIncome <= 0) {
+      result.textContent = 'Thu nhập chịu thuế bằng 0 hoặc âm, không phải nộp thuế.';
+      result.className = 'mt-4 text-center font-semibold text-green-600';
+      return;
+    }
+
+    const tax = calculateTax(taxableIncome);
+    result.textContent = `Thu nhập chịu thuế: ${taxableIncome.toLocaleString('vi-VN')} VNĐ\nThuế thu nhập cá nhân phải nộp: ${tax.toLocaleString('vi-VN')} VNĐ`;
+    result.className = 'mt-4 text-center font-semibold text-green-600 whitespace-pre-line';
+  });
+</script>
+</body>
+</html>

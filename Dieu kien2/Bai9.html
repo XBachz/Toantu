@@ -1,0 +1,40 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiểm tra 3 số có phải là cạnh tam giác</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+<div class="bg-white p-6 rounded shadow max-w-sm w-full">
+  <h1 class="text-xl font-semibold mb-4 text-center">Kiểm tra 3 số có phải là cạnh tam giác</h1>
+  <form id="form" class="space-y-4">
+    <input type="number" id="a" placeholder="Cạnh a" step="any" min="0" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input type="number" id="b" placeholder="Cạnh b" step="any" min="0" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input type="number" id="c" placeholder="Cạnh c" step="any" min="0" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Kiểm tra</button>
+  </form>
+  <p id="result" class="mt-4 text-center font-semibold min-h-[1.5rem]"></p>
+</div>
+<script>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const a = parseFloat(document.getElementById('a').value);
+    const b = parseFloat(document.getElementById('b').value);
+    const c = parseFloat(document.getElementById('c').value);
+    if (a > 0 && b > 0 && c > 0 &&
+            a + b > c &&
+            b + c > a &&
+            a + c > b) {
+      result.textContent = 'Ba số nhập vào là cạnh của một tam giác.';
+      result.className = 'mt-4 text-center font-semibold text-green-600';
+    } else {
+      result.textContent = 'Ba số nhập vào không phải là cạnh của một tam giác.';
+      result.className = 'mt-4 text-center font-semibold text-red-600';
+    }
+  });
+</script>
+</body>
+</html>

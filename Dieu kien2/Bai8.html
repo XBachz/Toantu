@@ -1,0 +1,33 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiểm tra tuổi hợp lệ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+<div class="bg-white p-6 rounded shadow max-w-sm w-full">
+  <h1 class="text-xl font-semibold mb-4 text-center">Kiểm tra tuổi hợp lệ</h1>
+  <form id="form" class="space-y-4">
+    <input type="number" id="age" placeholder="Nhập tuổi" min="0" step="1" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Kiểm tra</button>
+  </form>
+  <p id="result" class="mt-4 text-center font-semibold min-h-[1.5rem]"></p>
+</div>
+<script>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const age = parseInt(document.getElementById('age').value, 10);
+    if (Number.isInteger(age) && age > 0 && age < 120) {
+      result.textContent = `Tuổi ${age} hợp lệ là tuổi của một người.`;
+      result.className = 'mt-4 text-center font-semibold text-green-600';
+    } else {
+      result.textContent = 'Tuổi không hợp lệ. Vui lòng nhập số nguyên từ 1 đến 119.';
+      result.className = 'mt-4 text-center font-semibold text-red-600';
+    }
+  });
+</script>
+</body>
+</html>

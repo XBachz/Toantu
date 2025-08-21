@@ -1,0 +1,31 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tính diện tích hình vuông</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-50 p-4">
+<div class="bg-white p-6 rounded shadow max-w-sm w-full">
+    <h1 class="text-xl font-semibold mb-4 text-center">Tính diện tích hình vuông</h1>
+    <input id="a" type="number" min="0" step="any" placeholder="Nhập cạnh a" class="w-full border rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button id="calc" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Tính</button>
+    <p id="res" class="mt-4 text-center text-gray-800 font-semibold"></p>
+</div>
+<script>
+    document.getElementById('calc').onclick = () => {
+        const a = parseFloat(document.getElementById('a').value);
+        const res = document.getElementById('res');
+        if (!a || a <= 0) {
+            res.textContent = 'Vui lòng nhập số dương hợp lệ';
+            res.classList.add('text-red-600');
+            res.classList.remove('text-gray-800');
+            return;
+        }
+        res.textContent = `Diện tích: ${(a*a).toFixed(2)}`;
+        res.classList.remove('text-red-600');
+        res.classList.add('text-gray-800');
+    }
+</script>
+</body>
+</html>

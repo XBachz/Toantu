@@ -1,0 +1,36 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tính diện tích tam giác vuông</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+<div class="bg-white p-6 rounded shadow max-w-sm w-full">
+  <h1 class="text-xl font-semibold mb-4 text-center">Tính diện tích tam giác vuông</h1>
+  <form id="form" class="space-y-4">
+    <input type="number" id="a" placeholder="Cạnh kề a (cm)" min="0" step="any" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input type="number" id="b" placeholder="Cạnh kề b (cm)" min="0" step="any" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Tính</button>
+  </form>
+  <p id="result" class="mt-4 text-center font-semibold min-h-[1.5rem]"></p>
+</div>
+<script>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const a = parseFloat(document.getElementById('a').value);
+    const b = parseFloat(document.getElementById('b').value);
+    if (a > 0 && b > 0) {
+      const area = (a * b) / 2;
+      result.textContent = `Diện tích: ${area.toLocaleString('vi-VN')} cm²`;
+      result.className = 'mt-4 text-center font-semibold text-green-600';
+    } else {
+      result.textContent = 'Vui lòng nhập số dương hợp lệ.';
+      result.className = 'mt-4 text-center font-semibold text-red-600';
+    }
+  });
+</script>
+</body>
+</html>
