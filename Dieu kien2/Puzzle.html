@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+    Puzzle Game
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+    .grid-container {
+      max-width: 360px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<div class="grid grid-cols-3 gap-1 grid-container">
+  <!-- 9 puzzle pieces -->
+  <img alt="Puzzle piece 1 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=1a","https://placehold.co/100x100?text=1b"]' height="100" src="https://storage.googleapis.com/a1aa/image/57fce41e-1d44-4f55-807c-8cac424da839.jpg" width="100"/>
+  <img alt="Puzzle piece 2 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=2a","https://placehold.co/100x100?text=2b"]' height="100" src="https://storage.googleapis.com/a1aa/image/cdc0109d-c6ee-4713-8cf9-01eaeb9cfd2d.jpg" width="100"/>
+  <img alt="Puzzle piece 3 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=3a","https://placehold.co/100x100?text=3b"]' height="100" src="https://storage.googleapis.com/a1aa/image/22ae6b6c-131e-4de2-22e1-8ba562173cca.jpg" width="100"/>
+  <img alt="Puzzle piece 4 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=4a","https://placehold.co/100x100?text=4b"]' height="100" src="https://storage.googleapis.com/a1aa/image/fc1a164a-f26d-483e-f563-df270b4ef899.jpg" width="100"/>
+  <img alt="Puzzle piece 5 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=5a","https://placehold.co/100x100?text=5b"]' height="100" src="https://storage.googleapis.com/a1aa/image/b89ddb56-7173-4f51-2455-55f0e478ad77.jpg" width="100"/>
+  <img alt="Puzzle piece 6 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=6a","https://placehold.co/100x100?text=6b"]' height="100" src="https://storage.googleapis.com/a1aa/image/b700bc96-2a80-4e6c-0619-039e8e147f31.jpg" width="100"/>
+  <img alt="Puzzle piece 7 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=7a","https://placehold.co/100x100?text=7b"]' height="100" src="https://storage.googleapis.com/a1aa/image/ef816c99-a293-4024-d22d-df38d971a269.jpg" width="100"/>
+  <img alt="Puzzle piece 8 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=8a","https://placehold.co/100x100?text=8b"]' height="100" src="https://storage.googleapis.com/a1aa/image/25518bd0-d7a7-4165-3be9-a7853ea1b5e6.jpg" width="100"/>
+  <img alt="Puzzle piece 9 variant A" class="cursor-pointer border border-gray-300" data-variants='["https://placehold.co/100x100?text=9a","https://placehold.co/100x100?text=9b"]' height="100" src="https://storage.googleapis.com/a1aa/image/f91302a8-a026-49d1-efb7-736e779bc9e8.jpg" width="100"/>
+</div>
+<script>
+  // The correct final images for each piece (the "complete" puzzle)
+  const correctImages = [
+    "https://placehold.co/100x100?text=1a",
+    "https://placehold.co/100x100?text=2a",
+    "https://placehold.co/100x100?text=3a",
+    "https://placehold.co/100x100?text=4a",
+    "https://placehold.co/100x100?text=5a",
+    "https://placehold.co/100x100?text=6a",
+    "https://placehold.co/100x100?text=7a",
+    "https://placehold.co/100x100?text=8a",
+    "https://placehold.co/100x100?text=9a"
+  ];
+
+  const pieces = document.querySelectorAll('img');
+
+  pieces.forEach((img, idx) => {
+    const variants = JSON.parse(img.getAttribute('data-variants'));
+    let currentIndex = 0;
+
+    img.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % variants.length;
+      img.src = variants[currentIndex];
+      checkComplete();
+    });
+  });
+
+  function checkComplete() {
+    const allCorrect = Array.from(pieces).every((img, i) => img.src === correctImages[i]);
+    if (allCorrect) {
+      alert("Chúc mừng! Bạn đã hoàn thành bức tranh!");
+    }
+  }
+</script>
+</body>
+</html>

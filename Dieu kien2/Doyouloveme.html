@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Do you love me?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #no-button {
+            position: absolute;
+            transition: top 0.2s ease, left 0.2s ease;
+            cursor: pointer;
+        }
+        #buttons-wrapper {
+            position: relative;
+            width: 120px; /* enough width for both buttons side by side */
+            height: 40px; /* enough height for buttons */
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="flex flex-col items-center justify-center min-h-screen">
+    <h1 class="font-serif font-bold text-3xl mb-4">Do you love me?</h1>
+    <div id="buttons-wrapper" class="relative">
+        <button id="yes-button" class="border border-gray-400 rounded px-3 py-1 text-sm select-none mr-4 relative z-10">YES</button>
+        <button id="no-button" class="border border-gray-400 rounded px-3 py-1 text-sm select-none">NO</button>
+    </div>
+</div>
+
+<script>
+    const yesBtn = document.getElementById('yes-button');
+    const noBtn = document.getElementById('no-button');
+    const container = document.getElementById('container');
+    const buttonsWrapper = document.getElementById('buttons-wrapper');
+
+    yesBtn.addEventListener('click', () => {
+        alert('<3');
+    });
+
+    noBtn.style.top = '0px';
+    noBtn.style.left = '60px';
+
+    noBtn.addEventListener('mouseenter', () => {
+        const containerRect = container.getBoundingClientRect();
+        const btnRect = noBtn.getBoundingClientRect();
+
+        // Calculate max top and left so button stays fully visible inside container
+        const maxTop = containerRect.height - btnRect.height;
+        const maxLeft = containerRect.width - btnRect.width;
+
+        // Generate random top and left within container bounds
+        const randomTop = Math.random() * maxTop;
+        const randomLeft = Math.random() * maxLeft;
+
+        noBtn.style.top = `${randomTop}px`;
+        noBtn.style.left = `${randomLeft}px`;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Good Cheap Fast Toggle with Logic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+          rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#dce6eb] flex flex-col items-center justify-center min-h-screen p-6">
+<div id="container" class="space-y-12"></div>
+
+<button
+        id="disableBtn"
+        class="mt-12 px-6 py-3 bg-gray-400 text-white font-bold rounded-lg hidden"
+>
+  Tắt tất cả
+</button>
+
+<script>
+  const container = document.getElementById('container');
+  const disableBtn = document.getElementById('disableBtn');
+  const items = ['GOOD', 'CHEAP', 'FAST'];
+
+  // Track toggle states
+  const toggleStates = {
+    GOOD: false,
+    CHEAP: false,
+    FAST: false,
+  };
+
+  function updateDisableButton() {
+    // Count how many toggles are ON
+    const onCount = Object.values(toggleStates).filter(Boolean).length;
+    if (onCount >= 2) {
+      disableBtn.classList.remove('hidden');
+    } else {
+      disableBtn.classList.add('hidden');
+    }
+  }
+
+  function createToggle(name) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'flex items-center space-x-8';
+
+    const toggle = document.createElement('button');
+    toggle.setAttribute('aria-pressed', 'false');
+    toggle.setAttribute('type', 'button');
+    toggle.className =
+            'relative w-16 h-8 rounded-full bg-gray-500 focus:outline-none';
+
+    const circle = document.createElement('div');
+    circle.className =
+            'absolute top-0 left-0 w-10 h-10 bg-gray-300 rounded-full -translate-y-1/4 -translate-x-1/4 transition-transform duration-200';
+
+    toggle.appendChild(circle);
+
+    const text = document.createElement('span');
+    text.className = 'text-black text-4xl font-extrabold tracking-wide select-none';
+    text.textContent = name;
+
+    toggle.addEventListener('click', () => {
+      toggleStates[name] = !toggleStates[name];
+      if (toggleStates[name]) {
+        toggle.classList.replace('bg-gray-500', 'bg-gray-300');
+        circle.classList.add('translate-x-8');
+        toggle.setAttribute('aria-pressed', 'true');
+      } else {
+        toggle.classList.replace('bg-gray-300', 'bg-gray-500');
+        circle.classList.remove('translate-x-8');
+        toggle.setAttribute('aria-pressed', 'false');
+      }
+      updateDisableButton();
+    });
+
+    wrapper.appendChild(toggle);
+    wrapper.appendChild(text);
+
+    return wrapper;
+  }
+
+  // Create toggles and append
+  items.forEach((item) => {
+    container.appendChild(createToggle(item));
+  });
+
+  // Disable all toggles when button clicked
+  disableBtn.addEventListener('click', () => {
+    Object.keys(toggleStates).forEach((key) => {
+      toggleStates[key] = false;
+    });
+    // Reset UI
+    container.querySelectorAll('button').forEach((btn) => {
+      btn.classList.remove('bg-gray-300');
+      btn.classList.add('bg-gray-500');
+      const circle = btn.querySelector('div');
+      circle.classList.remove('translate-x-8');
+      btn.setAttribute('aria-pressed', 'false');
+    });
+    updateDisableButton();
+  });
+</script>
+</body>
+</html>
