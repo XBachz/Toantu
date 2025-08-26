@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra nhiệt độ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap&subset=vietnamese" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+  <script>
+    function checkTemperature() {
+      let temp = prompt("Vui lòng nhập nhiệt độ hiện tại:");
+      if (temp !== null) {
+        temp = temp.trim();
+        if (temp === "" || isNaN(temp)) {
+          alert("Vui lòng nhập một số hợp lệ.");
+        } else {
+          temp = Number(temp);
+          if (temp > 100) {
+            alert("Nhiệt độ quá cao, vui lòng giảm nhiệt độ.");
+          } else if (temp < 20) {
+            alert("Nhiệt độ quá thấp, vui lòng tăng nhiệt độ.");
+          } else {
+            alert("Nhiệt độ hiện tại là " + temp + "°.");
+          }
+        }
+      }
+    }
+    window.onload = checkTemperature;
+  </script>
+</head>
+<body>
+</body>
+</html>

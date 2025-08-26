@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Input</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-black flex items-center justify-center min-h-screen p-4">
+<div class="max-w-md w-full rounded-xl bg-gray-800 p-6 shadow-lg">
+  <label for="inputN" class="block text-gray-300 mb-1 text-sm">
+    Nhập n số nguyên tố đầu tiên:
+  </label>
+  <input id="inputN" type="text" class="w-full rounded-md border border-green-500 bg-transparent px-4 py-2 text-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" />
+  <div class="flex justify-end space-x-4 mt-5">
+    <button id="okBtn" class="bg-green-500 text-gray-900 font-semibold rounded-full px-6 py-2">OK</button>
+    <button id="cancelBtn" class="bg-gray-700 text-gray-300 font-semibold rounded-full px-6 py-2">Huỷ</button>
+  </div>
+  <div id="result" class="mt-4 text-green-400 font-mono text-sm"></div>
+</div>
+
+<script>
+  function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) if (n % i === 0) return false;
+    return true;
+  }
+
+  document.getElementById('okBtn').onclick = () => {
+    const numbers = +document.getElementById('inputN').value;
+    const result = document.getElementById('result');
+    if (!numbers || numbers <= 0) return result.textContent = 'Vui lòng nhập số nguyên dương hợp lệ.';
+    let count = 0, N = 2, primes = [];
+    while (count < numbers) {
+      if (isPrime(N)) {
+        primes.push(N);
+        count++;
+      }
+      N++;
+    }
+    result.textContent = `Các số nguyên tố đầu tiên (${numbers}): ${primes.join(', ')}`;
+  };
+
+  document.getElementById('cancelBtn').onclick = () => {
+    document.getElementById('inputN').value = '';
+    document.getElementById('result').textContent = '';
+  };
+</script>
+</body>
+</html>

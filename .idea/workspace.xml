@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Doyouloveme.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Maytinh.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Nut.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dieu kien2/Puzzle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/So nguyen to.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/bai1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,11 +48,14 @@
     "JavaScript Debug.Bai5.html.executor": "Run",
     "JavaScript Debug.Bai6.html.executor": "Run",
     "JavaScript Debug.Bai7.html.executor": "Run",
+    "JavaScript Debug.Bang.html.executor": "Run",
     "JavaScript Debug.Bia7.html.executor": "Run",
     "JavaScript Debug.Caculator.html.executor": "Run",
     "JavaScript Debug.Doyouloveme.html.executor": "Run",
     "JavaScript Debug.Maytinh.html.executor": "Run",
+    "JavaScript Debug.Nut.html.executor": "Run",
     "JavaScript Debug.Puzzle.html.executor": "Run",
+    "JavaScript Debug.So nguyen to.html.executor": "Run",
     "JavaScript Debug.Switch-case.html.executor": "Run",
     "JavaScript Debug.bai1.html.executor": "Run",
     "JavaScript Debug.cannang.html.executor": "Run",
@@ -99,7 +104,7 @@
       <workItem from="1755777027337" duration="942000" />
       <workItem from="1755778488917" duration="830000" />
       <workItem from="1755927788635" duration="914000" />
-      <workItem from="1756204327603" duration="514000" />
+      <workItem from="1756204327603" duration="2219000" />
     </task>
     <servers />
   </component>

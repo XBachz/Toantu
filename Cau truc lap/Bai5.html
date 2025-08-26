@@ -1,0 +1,63 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tổng 20 số đầu dãy Fibonacci</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap&subset=vietnamese" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      padding: 1rem;
+      background: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0;
+      list-style: none;
+      max-width: 600px;
+      justify-content: center;
+    }
+    li {
+      background: #3b82f6;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+      min-width: 40px;
+      text-align: center;
+      user-select: none;
+      font-weight: 500;
+    }
+    .sum {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+    }
+  </style>
+</head>
+<body>
+<ul id="fib"></ul>
+<div class="sum" id="sum"></div>
+<script>
+  const fib = [0,1];
+  for(let i=2;i<20;i++) fib[i]=fib[i-1]+fib[i-2];
+  const ul=document.getElementById('fib');
+  fib.forEach(n=>{
+    const li=document.createElement('li');
+    li.textContent=n;
+    ul.appendChild(li);
+  });
+  const total = fib.reduce((a,b)=>a+b,0);
+  document.getElementById('sum').textContent = "Tổng 20 số đầu tiên trong dãy Fibonacci là: " + total;
+</script>
+</body>
+</html>

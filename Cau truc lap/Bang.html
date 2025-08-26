@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bảng cửu chương</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-serif p-6">
+<h1 class="text-3xl font-extrabold mb-4">Bảng cửu chương</h1>
+<table id="multiplicationTable" class="w-full border border-gray-700 table-fixed text-center"></table>
+
+<script>
+  const table = document.getElementById('multiplicationTable');
+
+  for (let row = 1; row <= 10; row++) {
+    const tr = document.createElement('tr');
+
+    for (let col = 1; col <= 10; col++) {
+      const td = document.createElement('td');
+      td.className = 'border border-gray-700 p-2';
+      td.textContent = `${col}*${row}=${col * row}`;
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+</script>
+</body>
+</html>
