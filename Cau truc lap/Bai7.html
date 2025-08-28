@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>FizzBuzz</title>
+</head>
+<body>
+<pre id="output"></pre>
+<script>
+    const output = document.getElementById('output');
+    let result = '';
+    for (let i = 1; i <= 100; i++) {
+        if (i % 15 === 0) {
+            result += 'FizzBuzz\n';
+        } else if (i % 3 === 0) {
+            result += 'Fizz\n';
+        } else if (i % 5 === 0) {
+            result += 'Buzz\n';
+        } else {
+            result += i + '\n';
+        }
+    }
+    output.textContent = result;
+</script>
+</body>
+</html>

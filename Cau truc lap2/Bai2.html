@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tính Giai Thừa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+<div class="bg-white p-6 rounded shadow max-w-sm w-full text-center">
+  <h1 class="text-xl font-bold mb-4">Tính Giai Thừa</h1>
+  <input id="num" type="number" min="1" placeholder="Nhập số nguyên dương" class="w-full p-2 border rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+  <button id="calc" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Tính</button>
+  <p id="res" class="mt-4 text-green-600 font-semibold"></p>
+</div>
+<script>
+  const num = document.getElementById('num'), res = document.getElementById('res');
+  document.getElementById('calc').onclick = () => {
+    let n = +num.value;
+    if (!n || n < 1 || n > 170) return res.textContent = "Nhập số nguyên dương từ 1 đến 170";
+    let f = 1;
+    for(let i=2; i<=n; i++) f *= i;
+    res.textContent = `Giai thừa của ${n} là: ${f.toLocaleString()}`;
+  };
+  num.onkeydown = e => { if(e.key==='Enter') document.getElementById('calc').click(); };
+</script>
+</body>
+</html>

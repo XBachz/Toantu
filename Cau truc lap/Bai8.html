@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Number Guessing Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+<button onclick="doanso()" class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition focus:outline-none focus:ring-4 focus:ring-blue-300">
+  Bắt đầu
+</button>
+
+<script>
+  function doanso() {
+    let number = +prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?");
+    if (isNaN(number) || number < 1) {
+      alert("Vui lòng nhập số nguyên lớn hơn 0.");
+      return;
+    }
+    let number_ran = Math.floor(Math.random() * number);
+    console.log(number_ran);
+    let count = 0;
+    let number_check = +prompt("Nhập số bạn đoán");
+    while (number_check !== number_ran) {
+      count++;
+      if (count === 4) {
+        alert("Bạn hết số lần đoán");
+        break;
+      } else if (number_check < number_ran) {
+        alert("Số bạn đoán bé hơn");
+      } else {
+        alert("Số bạn đoán lớn hơn");
+      }
+      number_check = +prompt("Nhập số bạn đoán");
+    }
+    if (count === 4) {
+      document.body.innerHTML = `<div class="text-center text-red-600 text-xl font-semibold">Bạn hết số lần đoán</div>`;
+    } else {
+      document.body.innerHTML = `<div class="text-center text-green-600 text-xl font-semibold">Bạn đã đoán đúng số. Chúc mừng bạn!</div>`;
+    }
+  }
+</script>
+</body>
+</html>

@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bang.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cau truc lap/So nguyen to.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cau truc lap/bai1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap/Bai8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap2/Bai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cau truc lap2/Bai3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +47,7 @@
     "JavaScript Debug.Bai5.html.executor": "Run",
     "JavaScript Debug.Bai6.html.executor": "Run",
     "JavaScript Debug.Bai7.html.executor": "Run",
+    "JavaScript Debug.Bai8.html.executor": "Run",
     "JavaScript Debug.Bang.html.executor": "Run",
     "JavaScript Debug.Bia7.html.executor": "Run",
     "JavaScript Debug.Caculator.html.executor": "Run",
@@ -105,6 +105,7 @@
       <workItem from="1755778488917" duration="830000" />
       <workItem from="1755927788635" duration="914000" />
       <workItem from="1756204327603" duration="2219000" />
+      <workItem from="1756383252738" duration="579000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,23 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Tổng 30 số chia hết cho 7 đầu tiên</title>
+</head>
+<body>
+<h1>Tổng 30 số chia hết cho 7 đầu tiên trong các số tự nhiên</h1>
+<p id="result"></p>
+<script>
+  let sum = 0;
+  let count = 0;
+  let number = 1;
+  while (count < 30) {
+    if (number % 7 === 0) {
+      sum += number;
+      count++;
+    }
+    number++;
+  }
+  document.getElementById('result').textContent = `Tổng là: ${sum}`;
+</script>
+</body>
+</html>
