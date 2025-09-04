@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<script>
+  // Khởi tạo mảng a và b, mỗi mảng 10 phần tử số nguyên
+  let a = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+  let b = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+
+  // Tạo mảng c gồm 20 phần tử
+  let c = new Array(20);
+
+  // Lưu các phần tử nối từ mảng b và a vào mảng c (b trước, a sau)
+  for (let i = 0; i < 10; i++) {
+    c[i] = b[i];
+  }
+  for (let i = 0; i < 10; i++) {
+    c[i + 10] = a[i];
+  }
+
+  // Hiển thị mảng c
+  document.write("Mảng c (nối b và a):<br>");
+  document.write(c.join(", "));
+</script>
+</body>
+</html>

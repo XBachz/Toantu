@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let arr = [34, 7, 23, 32, 5, 62, 14, 9, 50, 41];
+    let maxVal = arr[0];
+    let maxIndex = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];
+            maxIndex = i;
+        }
+    }
+    document.write(`Phần tử lớn nhất trong mảng là ${maxVal} tại vị trí ${maxIndex}.`);
+</script>
+</body>
+</html>

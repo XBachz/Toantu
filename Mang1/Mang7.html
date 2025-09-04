@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xóa phần tử V khỏi mảng nếu có</title>
+</head>
+<body>
+<script>
+  // Khởi tạo mảng 10 phần tử số nguyên
+  let arr = [12, 5, 8, 19, 23, 7, 3, 15, 10, 6];
+
+  // Nhập giá trị V từ người dùng
+  let V = parseInt(prompt("Nhập số nguyên V:"));
+
+  // Tìm vị trí của V trong mảng
+  let index = arr.indexOf(V);
+
+  if (index !== -1) {
+    // Dịch các phần tử bên phải V sang trái 1 vị trí
+    for (let i = index; i < arr.length - 1; i++) {
+      arr[i] = arr[i + 1];
+    }
+    // Gán 0 cho phần tử cuối cùng
+    arr[arr.length - 1] = 0;
+
+    document.write("Mảng sau khi xóa " + V + ":<br>");
+    document.write(arr.join(", "));
+  } else {
+    document.write(V + " không thuộc mảng.");
+  }
+</script>
+</body>
+</html>

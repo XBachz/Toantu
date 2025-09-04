@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Check if V is in the array</title>
+</head>
+<body>
+<script>
+  // Khởi tạo mảng 10 phần tử số nguyên
+  let arr = [12, 5, 8, 19, 23, 7, 3, 15, 10, 6];
+
+  // Nhập giá trị V từ người dùng
+  let V = parseInt(prompt("Nhập số nguyên V:"));
+
+  // Kiểm tra V có trong mảng không
+  if (arr.includes(V)) {
+    document.write(V + " is in the array");
+  } else {
+    document.write(V + " is not in the array");
+  }
+</script>
+</body>
+</html>

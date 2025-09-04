@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bài 3</title>
+</head>
+<body>
+<script>
+  let arr = [12, 5, 8, 20, 7, 15, 3, 10];
+  let maxVal = arr[0];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > maxVal) {
+      maxVal = arr[i];
+    }
+    sum += arr[i];
+  }
+  let avg = sum / arr.length;
+  document.write(`Giá trị lớn nhất trong mảng là ${maxVal}.<br>`);
+  document.write(`Giá trị trung bình của các phần tử trong mảng là ${avg.toFixed(2)}.`);
+</script>
+</body>
+</html>

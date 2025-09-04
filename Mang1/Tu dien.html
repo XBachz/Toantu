@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu dien</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+<div class="max-w-md w-full bg-white rounded-lg shadow-lg p-6">
+    <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Từ điển Anh - Việt đơn giản</h1>
+    <form id="searchForm" class="flex flex-col space-y-4">
+        <label for="englishWord" class="text-gray-700 font-semibold">Nhập từ tiếng Anh cần tìm:</label>
+        <input type="text" id="englishWord" name="englishWord" placeholder="Nhập từ tiếng Anh..." autocomplete="off" class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded transition-colors duration-300 flex items-center justify-center">
+            <i class="fas fa-search mr-2"></i> Tìm kiếm
+        </button>
+    </form>
+    <div id="result" class="mt-6 p-4 bg-gray-100 rounded text-center text-lg font-semibold text-gray-800 min-h-[48px]"></div>
+</div>
+
+<script>
+    const dictionary = [
+        { en: "hello", vi: "xin chào" },
+        { en: "goodbye", vi: "tạm biệt" },
+        { en: "thank", vi: "cảm ơn" },
+        { en: "please", vi: "làm ơn" },
+        { en: "yes", vi: "vâng" },
+        { en: "no", vi: "không" },
+        { en: "cat", vi: "con mèo" },
+        { en: "dog", vi: "con chó" },
+        { en: "water", vi: "nước" },
+        { en: "food", vi: "thức ăn" },
+        { en: "house", vi: "ngôi nhà" },
+        { en: "car", vi: "xe hơi" },
+        { en: "book", vi: "quyển sách" },
+        { en: "school", vi: "trường học" },
+        { en: "friend", vi: "bạn bè" }
+    ];
+
+    const form = document.getElementById('searchForm');
+    const input = document.getElementById('englishWord');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const query = input.value.trim().toLowerCase();
+        if (!query) {
+            resultDiv.textContent = "";
+            return;
+        }
+        let found = "Không tìm thấy";
+        for (let i = 0; i < dictionary.length; i++) {
+            if (dictionary[i].en === query) {
+                found = dictionary[i].vi;
+                break;
+            }
+        }
+        resultDiv.textContent = found;
+    });
+</script>
+</body>
+</html>
