@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 4</title>
+</head>
+<body>
+<pre>
+<script>
+    let width = 15;
+    let height = 7;
+    for (let i = 1; i <= height; i++) {
+        let line = "";
+        for (let j = 1; j <= width; j++) {
+            if (i === 1 || i === height || j === 1 || j === width) {
+                line += "*";
+                if (j < width) line += " ";
+            } else {
+                line += "  ";
+            }
+        }
+        document.write(line + "\n");
+    }
+</script>
+</pre>
+</body>
+</html>
