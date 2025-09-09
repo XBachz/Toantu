@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bai 3</title>
+</head>
+<body>
+<script>
+  let arr = ['a', '1', 'b', '3', 'c', '9', 'd', '0', 'e'];
+
+  let size = arr.length;
+
+  let countDigits = 0;
+
+  for (let i = 0; i < size; i++) {
+    if (arr[i] >= '0' && arr[i] <= '9') {
+      countDigits++;
+    }
+  }
+
+  // In kết quả
+  document.write(`Kích thước mảng: ${size}<br>`);
+  document.write(`Số ký tự số trong mảng: ${countDigits}`);
+</script>
+</body>
+</html>

@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Mang1/Ham co san.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Mang9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mang1/Tu dien.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mang2/Bai1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mang2/Bai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mang2/Bai3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mang2/Bai4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mang2/Bai5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mang2/Bai6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mang2/Faking Textarea.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mang2/Tic tac toe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +52,7 @@
     "JavaScript Debug.Bai7.html.executor": "Run",
     "JavaScript Debug.Bai8.html.executor": "Run",
     "JavaScript Debug.Bang.html.executor": "Run",
+    "JavaScript Debug.Bia1.html.executor": "Run",
     "JavaScript Debug.Bia7.html.executor": "Run",
     "JavaScript Debug.Caculator.html.executor": "Run",
     "JavaScript Debug.Doyouloveme.html.executor": "Run",
@@ -118,7 +116,8 @@
       <workItem from="1755927788635" duration="914000" />
       <workItem from="1756204327603" duration="2219000" />
       <workItem from="1756383252738" duration="996000" />
-      <workItem from="1756985027357" duration="2573000" />
+      <workItem from="1756985027357" duration="2994000" />
+      <workItem from="1757418284109" duration="1013000" />
     </task>
     <servers />
   </component>

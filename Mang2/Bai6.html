@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bai 6</title>
+</head>
+<body>
+<h2>Thay thế ký tự '-' bằng '_' trong mảng ký tự</h2>
+<label for="inputArray">Nhập các ký tự cách nhau bằng dấu phẩy (ví dụ: a,-,b,-,c):</label><br />
+<input type="text" id="inputArray" style="width: 300px;" />
+<br /><br />
+<button onclick="replaceChars()">Thay thế</button>
+<h3>Kết quả:</h3>
+<p id="result"></p>
+
+<script>
+  function replaceChars() {
+    let input = document.getElementById('inputArray').value;
+    let arr = input.split(',').map(item => item.trim());
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === '-') {
+        arr[i] = '_';
+      }
+    }
+
+    document.getElementById('result').textContent = `Mảng sau khi thay thế: [${arr.join(', ')}]`;
+  }
+</script>
+</body>
+</html>

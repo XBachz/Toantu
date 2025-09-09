@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bai 5</title>
+</head>
+<body>
+<h2>So sánh 2 chuỗi</h2>
+<label for="str1">Chuỗi 1:</label>
+<input type="text" id="str1" />
+<br /><br />
+<label for="str2">Chuỗi 2:</label>
+<input type="text" id="str2" />
+<br /><br />
+<button onclick="compareStrings()">Kiểm tra</button>
+<p id="result"></p>
+
+<script>
+  function compareStrings() {
+    let s1 = document.getElementById('str1').value;
+    let s2 = document.getElementById('str2').value;
+    let result = document.getElementById('result');
+
+    if (s1 === s2) {
+      result.textContent = "Hai chuỗi giống nhau.";
+    } else {
+      result.textContent = "Hai chuỗi khác nhau.";
+    }
+  }
+</script>
+</body>
+</html>

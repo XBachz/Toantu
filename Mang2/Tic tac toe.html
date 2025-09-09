@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caro Game Simple</title>
+</head>
+<body>
+<h3>Caro game simple</h3>
+<p id="carogame" style="font-family: monospace; white-space: pre;"></p>
+<input type="button" value="Change Value" onclick="ChangeValue()" />
+<script>
+  let b = document.getElementById('carogame');
+  let board = [];
+  let h = 1;
+  const size = 5;
+
+  // Khởi tạo mảng 2 chiều với giá trị '(.)'
+  for (let i = 0; i < size; i++) {
+    board[i] = [];
+    for (let j = 0; j < size; j++) {
+      board[i][j] = '(.)';
+    }
+  }
+
+  // Hàm hiển thị bảng ra màn hình
+  function renderBoard() {
+    let data = '';
+    for (let i = 0; i < size; i++) {
+      for (let j = 0; j < size; j++) {
+        data += board[i][j] + '   ';
+      }
+      data += '\n';
+    }
+    b.textContent = data;
+  }
+
+  renderBoard();
+
+  // Hàm kiểm tra thắng theo 3 ô liên tiếp (hàng ngang, dọc, chéo)
+  function checkWin(player) {
+    // Kiểm tra hàng ngang và dọc
+    for (let i = 0; i < size; i++) {
+      for (let j = 0; j <= size - 3; j++) {
+        // Hàng ngang
+        if (
+                board[i][j] === player &&
+                board[i][j + 1] === player &&
+                board[i][j + 2] === player
+        ) {
+          return true;
+        }
+        // Cột dọc
+        if (
+                board[j][i] === player &&
+                board[j + 1][i] === player &&
+                board[j + 2][i] === player
+        ) {
+          return true;
+        }
+      }
+    }
+
+    // Kiểm tra đường chéo chính và phụ
+    for (let i = 0; i <= size - 3; i++) {
+      for (let j = 0; j <= size - 3; j++) {
+        // Đường chéo chính
+        if (
+                board[i][j] === player &&
+                board[i + 1][j + 1] === player &&
+                board[i + 2][j + 2] === player
+        ) {
+          return true;
+        }
+        // Đường chéo phụ
+        if (
+                board[i][j + 2] === player &&
+                board[i + 1][j + 1] === player &&
+                board[i + 2][j] === player
+        ) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
+
+  function ChangeValue() {
+    let positionX = parseInt(prompt("Enter the position of x (0 to 4):"));
+    let positionY = parseInt(prompt("Enter the position of y (0 to 4):"));
+
+    if (
+            isNaN(positionX) || isNaN(positionY) ||
+            positionX < 0 || positionX >= size ||
+            positionY < 0 || positionY >= size
+    ) {
+      alert("Vị trí không hợp lệ! Vui lòng nhập số từ 0 đến 4.");
+      return;
+    }
+
+    if (board[positionX][positionY] !== '(.)') {
+      alert("Vị trí này đã được chọn, vui lòng chọn vị trí khác.");
+      return;
+    }
+
+    if (h % 2 === 0) {
+      board[positionX][positionY] = 'x';
+    } else {
+      board[positionX][positionY] = 'o';
+    }
+    h++;
+
+    renderBoard();
+
+    if (checkWin('x')) {
+      alert("x Thắng");
+      resetGame();
+    } else if (checkWin('o')) {
+      alert("o Thắng");
+      resetGame();
+    }
+  }
+
+  function resetGame() {
+    for (let i = 0; i < size; i++) {
+      for (let j = 0; j < size; j++) {
+        board[i][j] = '(.)';
+      }
+    }
+    h = 1;
+    renderBoard();
+  }
+</script>
+</body>
+</html>
