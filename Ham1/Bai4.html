@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị biến result</title>
+</head>
+<body>
+    <script>
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+
+        result = 0;
+        alert("Giá trị result trước khi gọi hàm: " + result);
+
+        result = addNumbers();
+        alert("Giá trị result sau khi gọi hàm: " + result);
+    </script>
+</body>
+</html>

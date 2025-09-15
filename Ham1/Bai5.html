@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tìm chòm sao</title>
+</head>
+<body>
+  <script>
+    let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let star2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function check_star(star) {
+      for (let i = 0; i < star1.length; i++) {
+        if (star.toLowerCase() === star1[i].toLowerCase()) {
+          return star2[i];
+        }
+      }
+      return "Không tìm thấy ngôi sao '" + star + "'";
+    }
+
+    let star = prompt("Nhập vào tên ngôi sao:");
+    document.write(check_star(star));
+  </script>
+</body>
+</html>

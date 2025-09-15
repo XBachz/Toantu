@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So sánh hai số</title>
+</head>
+<body>
+    <h2>Ví dụ so sánh hai tham số</h2>
+    <p id="result"></p>
+
+    <script>
+        function compareNumbers(a, b) {
+            if (a > b) {
+                alert("Tham số thứ nhất lớn hơn tham số thứ hai!");
+            } else {
+                return a + b;
+            }
+        }
+        let x = 5;
+        let y = 10;
+        let result = compareNumbers(x, y);
+
+        if (result !== undefined) {
+            document.getElementById("result").textContent =
+                "Tổng của " + x + " và " + y + " là: " + result;
+        }
+    </script>
+</body>
+</html>

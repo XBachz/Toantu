@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tăng giá trị số</title>
+</head>
+<body>
+    <h2>Ví dụ tăng giá trị</h2>
+    <p id="result"></p>
+
+    <script>
+        function increaseByOne(num) {
+            return num + 1;
+        }
+
+        let inputNumber = 10; 
+        let result = increaseByOne(inputNumber);
+
+        document.getElementById("result").textContent = 
+            "Giá trị sau khi tăng 1 của " + inputNumber + " là: " + result;
+    </script>
+</body>
+</html>

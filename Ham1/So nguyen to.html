@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+    <h2>Danh sách số nguyên tố nhỏ hơn 10.000</h2>
+    <pre id="output"></pre> <!-- Nơi hiển thị kết quả -->
+
+    <script>
+        function isPrime(number) {
+            if (number < 2) return false; 
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false; 
+                }
+            }
+            return true;
+        }
+
+        let primes = [];
+        for (let i = 2; i < 10000; i++) {
+            if (isPrime(i)) {
+                primes.push(i);
+            }
+        }
+
+        document.getElementById("output").textContent = primes.join(", ");
+    </script>
+</body>
+</html>
