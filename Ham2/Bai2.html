@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính diện tích và chu vi hình tròn</title>
+</head>
+<body>
+  <h2>Kết quả</h2>
+  <p id="result"></p>
+
+  <script>
+    const PI = Math.PI; 
+
+    function tinhDienTich(r) {
+      return PI * r * r;
+    }
+ 
+    function tinhChuVi(r) {
+      return 2 * PI * r;
+    }
+
+    let input = prompt("Nhập bán kính hình tròn:");
+    let r = Number(input);
+
+    let dienTich = tinhDienTich(r);
+    let chuVi = tinhChuVi(r);
+
+    document.getElementById("result").innerHTML =
+      "Bán kính: " + r +
+      "<br>Diện tích hình tròn: " + dienTich.toFixed(2) +
+      "<br>Chu vi hình tròn: " + chuVi.toFixed(2);
+  </script>
+</body>
+</html>

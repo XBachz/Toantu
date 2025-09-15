@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính giai thừa</title>
+</head>
+<body>
+  <h2>Kết quả</h2>
+  <p id="result"></p>
+
+  <script>
+    function giaiThua(n) {
+      if (n < 0) {
+        return "Không có giai thừa cho số âm";
+      }
+      let result = 1;
+      for (let i = 1; i <= n; i++) {
+        result *= i;
+      }
+      return result;
+    }
+
+    let input = prompt("Nhập một số nguyên để tính giai thừa:");
+    let num = Number(input);
+
+    let kq = giaiThua(num);
+
+    document.getElementById("result").textContent =
+      "Giai thừa của " + num + " là: " + kq;
+  </script>
+</body>
+</html>

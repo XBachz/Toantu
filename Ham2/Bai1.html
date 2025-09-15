@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính bình phương</title>
+</head>
+<body>
+  <h2>Kết quả</h2>
+  <p id="result"></p>
+
+  <script>
+    function square(num) {
+      return num * num;
+    }
+
+    let input = prompt("Nhập một số bất kỳ:");
+    let number = Number(input); 
+    let result = square(number);
+
+    document.getElementById("result").textContent =
+      "Bình phương của " + number + " là: " + result;
+  </script>
+</body>
+</html>
