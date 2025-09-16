@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự số</title>
+</head>
+<body>
+<h2>Kết quả</h2>
+<p id="result"></p>
+
+<script>
+    function isDigit(char) {
+        return char.length === 1 && char >= '0' && char <= '9';
+    }
+    let input = prompt("Nhập một ký tự:");
+    let result = isDigit(input);
+
+    document.getElementById("result").textContent =
+        "Ký tự '" + input + "' là số? " + result;
+</script>
+</body>
+</html>

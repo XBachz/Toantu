@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        button { padding: 5px 10px; margin: 2px; border: none; cursor: pointer; border-radius: 5px; }
+        .add-btn, .edit-btn, .delete-btn { background-color: green; color: white; }
+        .delete-btn { background-color: red; }
+        .edit-btn { background-color: orange; }
+        #message { margin-top: 10px; font-weight: bold; color: blue; }
+    </style>
+</head>
+<body>
+<h2>Quản lý sản phẩm</h2>
+
+<!-- Form thêm sản phẩm -->
+<input type="text" id="newProduct" placeholder="Nhập tên sản phẩm">
+<button class="add-btn" onclick="addProduct()">Thêm</button>
+<div id="message"></div>
+
+<!-- Bảng hiển thị -->
+<table id="productTable">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Tên sản phẩm</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    // Bước 2: Mảng sản phẩm
+    let products = ["Sony Xperia", "Samsung Galaxy", "Nokia 6"];
+
+    // Bước 3: Các hàm xử lý
+    function displayProducts() {
+        let tbody = document.querySelector("#productTable tbody");
+        tbody.innerHTML = "";
+        products.forEach((p, index) => {
+            let row = `
+          <tr>
+            <td>${index + 1}</td>
+            <td onclick="editProduct(${index})">${p}</td>
+            <td>
+              <button class="edit-btn" onclick="editProduct(${index})">Sửa</button>
+              <button class="delete-btn" onclick="deleteProduct(${index})">Xoá</button>
+            </td>
+          </tr>
+        `;
+            tbody.innerHTML += row;
+        });
+    }
+
+    function addProduct() {
+        let input = document.getElementById("newProduct");
+        let name = input.value.trim();
+        if (name === "") {
+            document.getElementById("message").innerText = "Vui lòng nhập tên sản phẩm!";
+            return;
+        }
+        products.push(name);
+        input.value = "";
+        document.getElementById("message").innerText = "Thêm sản phẩm thành công!";
+        displayProducts();
+    }
+
+    function editProduct(index) {
+        let newName = prompt("Sửa tên sản phẩm:", products[index]);
+        if (newName !== null && newName.trim() !== "") {
+            products[index] = newName.trim();
+            document.getElementById("message").innerText = "Cập nhật sản phẩm thành công!";
+            displayProducts();
+        }
+    }
+
+    function deleteProduct(index) {
+        if (confirm("Bạn có chắc muốn xoá sản phẩm này?")) {
+            products.splice(index, 1);
+            document.getElementById("message").innerText = "Xoá sản phẩm thành công!";
+            displayProducts();
+        }
+    }
+
+    // Bước 4: Gọi hàm hiển thị ban đầu
+    displayProducts();
+</script>
+</body>
+</html>

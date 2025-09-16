@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi Foot ↔ Meter</title>
+</head>
+<body>
+<h2>Kết quả</h2>
+<div id="result"></div>
+
+<script>
+    function footToMeter(foot) {
+        return 0.305 * foot;
+    }
+
+    function meterToFoot(meter) {
+        return 3.279 * meter;
+    }
+
+    let resultDiv = document.getElementById("result");
+
+    // Nhập foot
+    let foot = parseFloat(prompt("Nhập foot:"));
+    if (!isNaN(foot)) {
+        resultDiv.innerHTML += `${foot} foot = ${footToMeter(foot).toFixed(3)} meter<br>`;
+    } else {
+        resultDiv.innerHTML += "Giá trị foot không hợp lệ!<br>";
+    }
+
+    // Nhập meter
+    let meter = parseFloat(prompt("Nhập meter:"));
+    if (!isNaN(meter)) {
+        resultDiv.innerHTML += `${meter} meter = ${meterToFoot(meter).toFixed(3)} foot`;
+    } else {
+        resultDiv.innerHTML += "Giá trị meter không hợp lệ!";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<h2>Kết quả</h2>
+<p id="result"></p>
+
+<script>
+    function reverseArray(arr) {
+        let reversed = [];
+        for (let i = arr.length - 1; i >= 0; i--) {
+            reversed.push(arr[i]);
+        }
+        return reversed;
+    }
+    let input = prompt("Nhập mảng số nguyên, cách nhau bằng dấu phẩy (,):");
+    let numbers = input.split(",").map(Number);
+    let reversedArray = reverseArray(numbers);
+
+    document.getElementById("result").textContent =
+        "Mảng ban đầu: [" + numbers.join(", ") + "]" +
+        " | Mảng sau khi đảo: [" + reversedArray.join(", ") + "]";
+</script>
+</body>
+</html>

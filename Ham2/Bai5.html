@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nhỏ nhất</title>
+</head>
+<body>
+<h2>Kết quả</h2>
+<p id="result"></p>
+
+<script>
+    function findMin(a, b, c) {
+        let min = a;
+        if (b < min) {
+            min = b;
+        }
+        if (c < min) {
+            min = c;
+        }
+        return min;
+    }
+    let num1 = Number(prompt("Nhập số nguyên thứ nhất:"));
+    let num2 = Number(prompt("Nhập số nguyên thứ hai:"));
+    let num3 = Number(prompt("Nhập số nguyên thứ ba:"));
+    let minValue = findMin(num1, num2, num3);
+
+    document.getElementById("result").textContent =
+        "Số nhỏ nhất trong ba số (" + num1 + ", " + num2 + ", " + num3 + ") là: " + minValue;
+</script>
+<

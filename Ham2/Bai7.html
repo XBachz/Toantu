@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chỗ hai số nguyên</title>
+</head>
+<body>
+<h2>Kết quả</h2>
+<p id="result"></p>
+
+<script>
+    function swap(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+    }
+    let num1 = Number(prompt("Nhập số nguyên thứ nhất:"));
+    let num2 = Number(prompt("Nhập số nguyên thứ hai:"));
+    let swapped = swap(num1, num2);
+
+    document.getElementById("result").textContent =
+        "Trước khi đổi: num1 = " + num1 + ", num2 = " + num2 +
+        " | Sau khi đổi: num1 = " + swapped[0] + ", num2 = " + swapped[1];
+</script>
+</body>
+</html>
