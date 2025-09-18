@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Demo</title>
+</head>
+<body>
+<h2>Chuyển đổi nhiệt độ</h2>
+<div id="output"></div>
+
+<script>
+  class Temperature {
+    constructor(celsius) {
+      this.celsius = celsius;
+    }
+
+    getCelsius() {
+      return this.celsius;
+    }
+
+    setCelsius(celsius) {
+      this.celsius = celsius;
+    }
+
+    toFahrenheit() {
+      return (this.celsius * 9/5) + 32;
+    }
+
+    toKelvin() {
+      return this.celsius + 273.15;
+    }
+  }
+
+  let temp = new Temperature(25);
+
+  let output = document.getElementById("output");
+  output.innerHTML =
+          `Temperature in Celsius: ${temp.getCelsius()} <br>
+       Temperature in Fahrenheit: ${temp.toFahrenheit()} <br>
+       Temperature in Kelvin: ${temp.toKelvin()} <br><br>`;
+
+  temp.setCelsius(30);
+
+  output.innerHTML +=
+          `Updated Temperature in Celsius: ${temp.getCelsius()} <br>
+       Updated Temperature in Fahrenheit: ${temp.toFahrenheit()} <br>
+       Updated Temperature in Kelvin: ${temp.toKelvin()}`;
+</script>
+</body>
+</html>

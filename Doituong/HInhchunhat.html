@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Demo</title>
+</head>
+<body>
+<canvas id="Rectangle" width="500" height="400" style="border:1px solid black;"></canvas>
+<p id="info"></p>
+
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        getHeight() {
+            return this.height;
+        }
+        getWidth() {
+            return this.width;
+        }
+        setHeight(height) {
+            this.height = height;
+        }
+        setWidth(width) {
+            this.width = width;
+        }
+
+        area() {
+            return this.width * this.height;
+        }
+
+        perimeter() {
+            return 2 * (this.width + this.height);
+        }
+    }
+    let myRectangle = new Rectangle(150, 50);
+    myRectangle.setWidth(200);
+
+    let width = myRectangle.getWidth();
+    let height = myRectangle.getHeight();
+
+    let canvas = document.getElementById("Rectangle");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#00FFFF';
+    ctx.fillRect(10, 10, width, height);
+
+    document.getElementById("info").innerHTML =
+        `Chiều rộng: ${width} <br>
+             Chiều cao: ${height} <br>
+             Diện tích: ${myRectangle.area()} <br>
+             Chu vi: ${myRectangle.perimeter()}`;
+</script>
+</body>
+</html>

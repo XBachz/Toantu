@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Ham2/doixung.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ham2/feet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ham2/ungdung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong/HInhchunhat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong/Temperature.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ham2/Bai4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ham2/Bai4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ham2/Bai5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ham2/Bai5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ham2/Bai6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ham2/Bai6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ham2/Bai7.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ham2/Bai7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ham2/Bai8.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ham2/Bai8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ham2/Bai9.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ham2/Bai9.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +60,7 @@
     "JavaScript Debug.Puzzle.html.executor": "Run",
     "JavaScript Debug.So nguyen to.html.executor": "Run",
     "JavaScript Debug.Switch-case.html.executor": "Run",
+    "JavaScript Debug.Temperature.html.executor": "Run",
     "JavaScript Debug.Tu dien.html.executor": "Run",
     "JavaScript Debug.bai1.html.executor": "Run",
     "JavaScript Debug.cannang.html.executor": "Run",
@@ -123,6 +117,7 @@
       <workItem from="1757904531060" duration="248000" />
       <workItem from="1758021100534" duration="110000" />
       <workItem from="1758021237414" duration="687000" />
+      <workItem from="1758196339509" duration="1195000" />
     </task>
     <servers />
   </component>
