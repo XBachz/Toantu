@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mô phỏng Remote và TiVi</title>
+</head>
+<body>
+<h2>Kết quả mô phỏng Remote & TiVi</h2>
+<div id="output"></div>
+
+<script>
+  // Lớp TiVi
+  class TiVi {
+    constructor() {
+      this.channel = 1;       // kênh mặc định
+      this.volume = 10;       // âm lượng mặc định
+      this.status = false;    // tắt (false), bật (true)
+    }
+
+    turnOn() {
+      this.status = true;
+      return "TiVi đã bật.";
+    }
+
+    turnOff() {
+      this.status = false;
+      return "TiVi đã tắt.";
+    }
+
+    setChannel(channel) {
+      if (this.status) {
+        this.channel = channel;
+        return `Đã chuyển sang kênh ${channel}.`;
+      } else {
+        return "Không thể đổi kênh vì TiVi đang tắt.";
+      }
+    }
+
+    changeVolume(amount) {
+      if (this.status) {
+        this.volume += amount;
+        if (this.volume < 0) this.volume = 0;
+        return `Âm lượng hiện tại: ${this.volume}`;
+      } else {
+        return "Không thể chỉnh âm lượng vì TiVi đang tắt.";
+      }
+    }
+
+    getInfo() {
+      return this.status
+              ? `TiVi đang BẬT - Kênh: ${this.channel}, Âm lượng: ${this.volume}`
+              : "TiVi đang TẮT.";
+    }
+  }
+
+  // Lớp Remote
+  class Remote {
+    constructor(code, tivi) {
+      this.code = code;
+      this.tivi = tivi;
+    }
+
+    setChannel(channel) {
+      return this.tivi.setChannel(channel);
+    }
+
+    changeVolume(amount) {
+      return this.tivi.changeVolume(amount);
+    }
+
+    turnOn() {
+      return this.tivi.turnOn();
+    }
+
+    turnOff() {
+      return this.tivi.turnOff();
+    }
+  }
+
+  // --- Mô phỏng ---
+  let output = document.getElementById("output");
+  let myTV = new TiVi();
+  let myRemote = new Remote("RM001", myTV);
+
+  // Bật TiVi
+  output.innerHTML += myTV.turnOn() + "<br>";
+
+  // Chuyển đến kênh 7
+  output.innerHTML += myTV.setChannel(7) + "<br>";
+
+  // Dùng Remote chuyển đến kênh 3
+  output.innerHTML += myRemote.setChannel(3) + "<br>";
+
+  // Tăng âm lượng lên 2 đơn vị
+  output.innerHTML += myRemote.changeVolume(2) + "<br>";
+
+  // Dùng Remote tắt TiVi
+  output.innerHTML += myRemote.turnOff() + "<br>";
+
+  // Hiển thị trạng thái cuối cùng
+  output.innerHTML += "<br><b>Trạng thái cuối cùng:</b> " + myTV.getInfo();
+</script>
+</body>
+</html>

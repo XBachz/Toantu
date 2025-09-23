@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Doituong/HInhchunhat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doituong/Temperature.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong/Laixe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong/dienthoai.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong2/Adam.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong2/Caro.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong2/Dichuyen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong2/Meo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong2/Remote.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doituong2/light.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +42,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.Adam.html.executor": "Run",
     "JavaScript Debug.Bai10.html.executor": "Run",
     "JavaScript Debug.Bai11.html.executor": "Run",
     "JavaScript Debug.Bai2.html.executor": "Run",
@@ -49,13 +56,16 @@
     "JavaScript Debug.Bia1.html.executor": "Run",
     "JavaScript Debug.Bia7.html.executor": "Run",
     "JavaScript Debug.Caculator.html.executor": "Run",
+    "JavaScript Debug.Dichuyen.html.executor": "Run",
     "JavaScript Debug.Doyouloveme.html.executor": "Run",
+    "JavaScript Debug.Laixe.html.executor": "Run",
     "JavaScript Debug.Mang1.html.executor": "Run",
     "JavaScript Debug.Mang2.html.executor": "Run",
     "JavaScript Debug.Mang3.html.executor": "Run",
     "JavaScript Debug.Mang4.html.executor": "Run",
     "JavaScript Debug.Mang5.html.executor": "Run",
     "JavaScript Debug.Maytinh.html.executor": "Run",
+    "JavaScript Debug.Meo.html.executor": "Run",
     "JavaScript Debug.Nut.html.executor": "Run",
     "JavaScript Debug.Puzzle.html.executor": "Run",
     "JavaScript Debug.So nguyen to.html.executor": "Run",
@@ -65,6 +75,8 @@
     "JavaScript Debug.bai1.html.executor": "Run",
     "JavaScript Debug.cannang.html.executor": "Run",
     "JavaScript Debug.chuyển đổi tiền tệ.html.executor": "Run",
+    "JavaScript Debug.dienthoai.html.executor": "Run",
+    "JavaScript Debug.light.html.executor": "Run",
     "JavaScript Debug.money.html.executor": "Run",
     "JavaScript Debug.tesr.html.executor": "Run",
     "JavaScript Debug.ungdung.html.executor": "Run",
@@ -118,6 +130,8 @@
       <workItem from="1758021100534" duration="110000" />
       <workItem from="1758021237414" duration="687000" />
       <workItem from="1758196339509" duration="1195000" />
+      <workItem from="1758347059443" duration="10000" />
+      <workItem from="1758615335656" duration="2272000" />
     </task>
     <servers />
   </component>

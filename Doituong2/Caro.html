@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cờ Caro 20x20</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        td {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        td.taken {
+            cursor: not-allowed;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>Trò chơi Cờ Caro 20x20</h2>
+<div id="board"></div>
+<h2 id="result"></h2>
+
+<script>
+    const size = 20;
+    let board = Array.from({ length: size }, () => Array(size).fill(""));
+    let currentPlayer = "X";
+    let gameOver = false;
+
+    // Tạo bàn cờ
+    function createBoard() {
+        let html = "<table>";
+        for (let i = 0; i < size; i++) {
+            html += "<tr>";
+            for (let j = 0; j < size; j++) {
+                html += `<td id="cell-${i}-${j}" onclick="makeMove(${i},${j})"></td>`;
+            }
+            html += "</tr>";
+        }
+        html += "</table>";
+        document.getElementById("board").innerHTML = html;
+    }
+
+    // Người chơi đánh
+    function makeMove(row, col) {
+        if (gameOver || board[row][col] !== "") return;
+
+        board[row][col] = currentPlayer;
+        document.getElementById(`cell-${row}-${col}`).innerText = currentPlayer;
+        document.getElementById(`cell-${row}-${col}`).classList.add("taken");
+
+        if (checkWin(row, col, currentPlayer)) {
+            document.getElementById("result").innerText = `Người chơi ${currentPlayer} thắng! 🎉`;
+            gameOver = true;
+            return;
+        }
+
+        // Đổi lượt
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+    }
+
+    // Kiểm tra thắng
+    function checkWin(row, col, player) {
+        return (
+            countConsecutive(row, col, 0, 1, player) + countConsecutive(row, col, 0, -1, player) - 1 >= 5 || // ngang
+            countConsecutive(row, col, 1, 0, player) + countConsecutive(row, col, -1, 0, player) - 1 >= 5 || // dọc
+            countConsecutive(row, col, 1, 1, player) + countConsecutive(row, col, -1, -1, player) - 1 >= 5 || // chéo chính
+            countConsecutive(row, col, 1, -1, player) + countConsecutive(row, col, -1, 1, player) - 1 >= 5    // chéo phụ
+        );
+    }
+
+    // Đếm số ô liên tiếp theo hướng dx, dy
+    function countConsecutive(row, col, dx, dy, player) {
+        let count = 0;
+        let r = row, c = col;
+        while (r >= 0 && r < size && c >= 0 && c < size && board[r][c] === player) {
+            count++;
+            r += dx;
+            c += dy;
+        }
+        return count;
+    }
+
+    createBoard();
+</script>
+</body>
+</html>

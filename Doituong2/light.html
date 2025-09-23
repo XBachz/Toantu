@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công tắc & Bóng đèn</title>
+</head>
+<body>
+<h2>Kết quả mô phỏng Công tắc và Bóng đèn</h2>
+<div id="output"></div>
+
+<script>
+    // Lớp Bóng đèn
+    class Lamp {
+        constructor() {
+            this.status = false; // false = tắt, true = bật
+        }
+
+        turnOn() {
+            this.status = true;
+        }
+
+        turnOff() {
+            this.status = false;
+        }
+
+        getStatus() {
+            return this.status ? "Bóng đèn đang BẬT 💡" : "Bóng đèn đang TẮT ❌";
+        }
+    }
+
+    // Lớp Công tắc
+    class SwitchButton {
+        constructor(lamp) {
+            this.status = false; // false = tắt, true = bật
+            this.lamp = lamp;    // kết nối với bóng đèn
+        }
+
+        connectToLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        switchOn() {
+            this.status = true;
+            if (this.lamp) {
+                this.lamp.turnOn();
+            }
+        }
+
+        switchOff() {
+            this.status = false;
+            if (this.lamp) {
+                this.lamp.turnOff();
+            }
+        }
+    }
+
+    // --- Kịch bản ---
+    let lamp = new Lamp();
+    let button = new SwitchButton(lamp);
+
+    let output = document.getElementById("output");
+
+    // Bật/tắt công tắc 10 lần
+    for (let i = 1; i <= 10; i++) {
+        if (i % 2 === 1) {
+            button.switchOn();
+            output.innerHTML += `Lần ${i}: ${lamp.getStatus()}<br>`;
+        } else {
+            button.switchOff();
+            output.innerHTML += `Lần ${i}: ${lamp.getStatus()}<br>`;
+        }
+    }
+</script>
+</body>
+</html>

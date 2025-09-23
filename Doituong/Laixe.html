@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Game</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+            display: block;
+            margin: auto;
+            background: #eee;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>🚗 Simple Car Game</h2>
+<canvas id="gameCanvas" width="500" height="400"></canvas>
+<script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Thông tin xe
+    let car = { x: 50, y: 50, size: 20, dx: 2, dy: 0, speed: 2 };
+
+    // Điểm số
+    let score = 0;
+    let gameOver = false;
+
+    // Sinh ngẫu nhiên chướng ngại vật và phần thưởng
+    function randomItems(num, type) {
+        let items = [];
+        for (let i = 0; i < num; i++) {
+            items.push({
+                x: Math.random() * (canvas.width - 20),
+                y: Math.random() * (canvas.height - 20),
+                size: 20,
+                type: type
+            });
+        }
+        return items;
+    }
+
+    let obstacles = randomItems(5, "obstacle");
+    let rewards = randomItems(5, "reward");
+
+    // Vẽ xe
+    function drawCar() {
+        ctx.fillStyle = "blue";
+        ctx.fillRect(car.x, car.y, car.size, car.size);
+    }
+
+    // Vẽ chướng ngại vật
+    function drawObstacles() {
+        ctx.fillStyle = "red";
+        obstacles.forEach(obs => {
+            ctx.fillRect(obs.x, obs.y, obs.size, obs.size);
+        });
+    }
+
+    // Vẽ phần thưởng
+    function drawRewards() {
+        ctx.fillStyle = "gold";
+        rewards.forEach(rew => {
+            ctx.beginPath();
+            ctx.arc(rew.x + rew.size/2, rew.y + rew.size/2, rew.size/2, 0, Math.PI * 2);
+            ctx.fill();
+        });
+    }
+
+    // Hiển thị điểm
+    function drawScore() {
+        ctx.fillStyle = "black";
+        ctx.font = "16px Arial";
+        ctx.fillText("Score: " + score, 10, 20);
+    }
+
+    // Di chuyển xe
+    function moveCar() {
+        car.x += car.dx;
+        car.y += car.dy;
+
+        // Giữ trong khung canvas
+        if (car.x < 0) car.x = 0;
+        if (car.y < 0) car.y = 0;
+        if (car.x + car.size > canvas.width) car.x = canvas.width - car.size;
+        if (car.y + car.size > canvas.height) car.y = canvas.height - car.size;
+    }
+
+    // Kiểm tra va chạm
+    function checkCollision() {
+        // Va vào chướng ngại vật → Game Over
+        for (let obs of obstacles) {
+            if (car.x < obs.x + obs.size &&
+                car.x + car.size > obs.x &&
+                car.y < obs.y + obs.size &&
+                car.y + car.size > obs.y) {
+                gameOver = true;
+            }
+        }
+
+        // Ăn phần thưởng → + điểm
+        rewards = rewards.filter(rew => {
+            if (car.x < rew.x + rew.size &&
+                car.x + car.size > rew.x &&
+                car.y < rew.y + rew.size &&
+                car.y + car.size > rew.y) {
+                score += 10;
+                return false; // bỏ phần thưởng đã ăn
+            }
+            return true;
+        });
+    }
+
+    // Vòng lặp game
+    function gameLoop() {
+        if (gameOver) {
+            ctx.fillStyle = "black";
+            ctx.font = "30px Arial";
+            ctx.fillText("GAME OVER", canvas.width / 2 - 80, canvas.height / 2);
+            ctx.fillText("Score: " + score, canvas.width / 2 - 60, canvas.height / 2 + 40);
+            return;
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        drawCar();
+        drawObstacles();
+        drawRewards();
+        drawScore();
+
+        moveCar();
+        checkCollision();
+
+        requestAnimationFrame(gameLoop);
+    }
+
+    // Điều khiển
+    document.addEventListener("keydown", (e) => {
+        switch (e.key) {
+            case "ArrowUp": car.dx = 0; car.dy = -car.speed; break;
+            case "ArrowDown": car.dx = 0; car.dy = car.speed; break;
+            case "ArrowLeft": car.dx = -car.speed; car.dy = 0; break;
+            case "ArrowRight": car.dx = car.speed; car.dy = 0; break;
+            case "Control": // tăng tốc
+                car.dx *= 2;
+                car.dy *= 2;
+                break;
+        }
+    });
+
+    // Reset tốc độ khi nhả Ctrl
+    document.addEventListener("keyup", (e) => {
+        if (e.key === "Control") {
+            car.dx = car.dx / 2;
+            car.dy = car.dy / 2;
+        }
+    });
+
+    // Bắt đầu game
+    gameLoop();
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hero Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+    img.hero {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+<script>
+  class Hero {
+    constructor(image, top, left, size, speed) {
+      this.image = image;
+      this.top = top;
+      this.left = left;
+      this.size = size;
+      this.speed = speed; // tốc độ di chuyển
+    }
+
+    moveRight() {
+      if (this.left + this.speed <= window.innerWidth - this.size) {
+        this.left += this.speed;
+      }
+    }
+
+    moveLeft() {
+      if (this.left - this.speed >= 0) {
+        this.left -= this.speed;
+      }
+    }
+
+    moveUp() {
+      if (this.top - this.speed >= 0) {
+        this.top -= this.speed;
+      }
+    }
+
+    moveDown() {
+      if (this.top + this.speed <= window.innerHeight - this.size) {
+        this.top += this.speed;
+      }
+    }
+
+    getHeroElement() {
+      return `<img class="hero"
+                     width="${this.size}" height="${this.size}"
+                     src="${this.image}"
+                     style="top:${this.top}px; left:${this.left}px;" />`;
+    }
+  }
+
+  // Khởi tạo nhân vật (ảnh demo Naruto)
+  let hero = new Hero("https://i.ibb.co/3R8zRjz/naruto.png", 50, 50, 120, 30);
+
+  // Vẽ nhân vật lần đầu
+  document.body.innerHTML = hero.getHeroElement();
+
+  // Lắng nghe sự kiện bàn phím
+  document.addEventListener("keydown", (event) => {
+    switch (event.key) {
+      case "ArrowRight":
+        hero.moveRight();
+        break;
+      case "ArrowLeft":
+        hero.moveLeft();
+        break;
+      case "ArrowUp":
+        hero.moveUp();
+        break;
+      case "ArrowDown":
+        hero.moveDown();
+        break;
+    }
+    document.body.innerHTML = hero.getHeroElement();
+  });
+</script>
+</body>
+</html>

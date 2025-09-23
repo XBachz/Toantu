@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mèo và Chuột</title>
+</head>
+<body>
+<script>
+    // Lớp Rat
+    class Rat {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.alive = true;
+        }
+
+        sound() {
+            return "Chít chít!";
+        }
+
+        isAlive() {
+            return this.alive;
+        }
+
+        die() {
+            this.alive = false;
+        }
+    }
+
+    // Lớp Cat
+    class Cat {
+        constructor(name, weight, maxSpeed) {
+            this.name = name;
+            this.weight = weight;
+            this.maxSpeed = maxSpeed;
+        }
+
+        sound() {
+            return "Meo meo!";
+        }
+
+        catchRat(rat) {
+            if (rat.isAlive() && this.maxSpeed > rat.speed) {
+                document.write(`${this.name} đã bắt được ${rat.name}.<br>`);
+                return true;
+            } else {
+                document.write(`${this.name} không bắt được ${rat.name}.<br>`);
+                return false;
+            }
+        }
+
+        eatRat(rat) {
+            if (rat.isAlive()) {
+                this.weight += rat.weight;
+                rat.die();
+                document.write(`${this.name} đã ăn ${rat.name}. Cân nặng hiện tại: ${this.weight}<br>`);
+            } else {
+                document.write(`${rat.name} đã chết hoặc không còn để ăn.<br>`);
+            }
+        }
+    }
+
+    // ---- Mô phỏng ----
+    let rat1 = new Rat("Jerry", 2, 15);
+    let rat2 = new Rat("Stuart", 1, 25);
+    let cat = new Cat("Tom", 5, 20);
+
+    document.write(`${rat1.name} kêu: ${rat1.sound()}<br>`);
+    document.write(`${cat.name} kêu: ${cat.sound()}<br><br>`);
+
+    // Tom bắt Jerry
+    if (cat.catchRat(rat1)) {
+        cat.eatRat(rat1);
+    }
+
+    // Tom bắt Stuart
+    if (cat.catchRat(rat2)) {
+        cat.eatRat(rat2);
+    }
+
+    document.write(`<br>Cân nặng cuối cùng của ${cat.name}: ${cat.weight}`);
+</script>
+</body>
+</html>
