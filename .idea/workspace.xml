@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f73fced1-21aa-4bb6-9897-bbc03ff3e690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Doituong/Laixe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doituong/dienthoai.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doituong2/Adam.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doituong2/Caro.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doituong2/Dichuyen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doituong2/Meo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doituong2/Remote.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doituong2/light.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Case/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Case/js/ball.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Case/js/bar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Case/js/game.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Case/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +22,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -68,6 +67,7 @@
     "JavaScript Debug.Meo.html.executor": "Run",
     "JavaScript Debug.Nut.html.executor": "Run",
     "JavaScript Debug.Puzzle.html.executor": "Run",
+    "JavaScript Debug.Remote.html.executor": "Run",
     "JavaScript Debug.So nguyen to.html.executor": "Run",
     "JavaScript Debug.Switch-case.html.executor": "Run",
     "JavaScript Debug.Temperature.html.executor": "Run",
@@ -85,6 +85,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,6 +96,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\WebstormProjects\Toantu\Case\js" />
       <recent name="C:\Users\Asus\WebstormProjects\Toantu\Toantu" />
       <recent name="C:\Users\Asus\WebstormProjects\Toantu\Dieu kien" />
     </key>
@@ -131,7 +133,8 @@
       <workItem from="1758021237414" duration="687000" />
       <workItem from="1758196339509" duration="1195000" />
       <workItem from="1758347059443" duration="10000" />
-      <workItem from="1758615335656" duration="2272000" />
+      <workItem from="1758615335656" duration="3087000" />
+      <workItem from="1759408143178" duration="189000" />
     </task>
     <servers />
   </component>
